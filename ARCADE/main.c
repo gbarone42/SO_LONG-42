@@ -12,11 +12,11 @@
 
 #include "so_long.h"
 
-int	main (int ac, char** av)
+int	main(int ac, char **av)
 {	
 	t_game	game;
-	int	control;
-	
+	int		control;
+
 	control = check_init(ac, av, &game);
 	if (!control)
 		return (0);

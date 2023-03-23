@@ -38,7 +38,7 @@ static int	aline_counter(char *av, t_game *game)
 	return (lines);
 }
 
-int	w_counter(char *line)  //The w_counter function takes a string line as input and returns the width of the string multiplied by 50
+int	w_counter(char *line)//The w_counter function takes a string line as input and returns the width of the string multiplied by 50
 {
 	int		i;
 
@@ -100,4 +100,3 @@ static int	aline_counter(char *file, t_game *game)
 	close(fd);
 	return (lines);
 }*/
-

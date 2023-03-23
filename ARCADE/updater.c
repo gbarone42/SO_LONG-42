@@ -79,6 +79,76 @@ void	moves_counter(t_game *game, void *b)
 }
 */
 
+size_t	ft_count(long int i)
+{
+	size_t	count;
+
+	count = 0;
+	if (i < 0)
+	{
+		i = i * -1;
+		count++;
+	}
+	if (i == 0)
+		return (1);
+	while (i > 0)
+	{
+		i = i / 10;
+		count++;
+	}
+	return (count);
+}
+
+char	*ft_logic(char *s, size_t count, size_t i, int n)
+{
+	while (count-- > i)
+	{
+		if (n < 0)
+		{
+			s[count] = '0' + (n % 10 * (-1));
+			n = n / 10;
+		}
+		else
+		{
+			s[count] = '0' + n % 10;
+			n = n / 10;
+		}
+	}
+	return (s);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	size_t	i;
+	size_t	count;
+
+	count = ft_count(n);
+	s = (char *)malloc((count + 1));
+	if (!s)
+		return (NULL);
+	s[count] = '\0';
+	if (n < 0)
+	{
+		s[0] = '-';
+		i = 1;
+	}
+	else
+		i = 0;
+	ft_logic(s, count, i, n);
+	return (s);
+}
+
+void	moves_counter(t_game *game)
+{
+	char	*move;
+
+	move = ft_itoa(game->moves);
+	mlx_string_put(game->mlx, game->win, 20, 15, 0xffffffff, "Moves :");
+	mlx_string_put(game->mlx, game->win, 80, 15, 0xffffffff, move);
+	free(move);
+}
+
 void	image_updater(char c, int x, int y, t_game *game)
 {
 	void	*p;

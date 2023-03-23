@@ -151,7 +151,3 @@ void	ghost_render(t_game *game, t_vector *ghost)
 	if (game->frame > u * 3)
 		mlx_put_image_to_window(game->mlx, game->win, game->images->g4, x, y);
 }
-
-
-
-

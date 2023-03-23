@@ -39,6 +39,7 @@ void	ghost_render(t_game *game, t_vector *ghost)
 		mlx_put_image_to_window(game->mlx, game->win, game->images->g4, x, y);
 }
 */
+
 void	player_render(t_game *game)
 {
 	int	x;
@@ -68,7 +69,7 @@ void	render(t_game *game)
 {
 	ghost_manager(game);
 	player_render(game);
-	//moves_counter(game, game->images->black);
+	moves_counter(game);
 	if (game->coins <= 0 && game->map[game->pp->y][game->pp->x] == 'E')
 		ft_close(game);
 	frame_updater(game);

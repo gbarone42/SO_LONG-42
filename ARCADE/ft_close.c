@@ -38,4 +38,3 @@ void	ft_close(t_game *game)
 	else
 		mlx_put_image_to_window(game->mlx, game->win, game->images->l, 0, 0);
 }
-

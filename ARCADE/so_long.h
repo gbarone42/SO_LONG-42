@@ -16,6 +16,8 @@
 # include "mlx_int.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_vector
 {
@@ -81,9 +83,8 @@ typedef struct s_game
 	int			f;
 }	t_game;
 
-
-int			main (int ac, char** av);
-int			check_init (int ac, char** av, t_game *game);
+int			main(int ac, char **av);
+int			check_init(int ac, char **av, t_game *game);
 int			maps_check(char *av);
 int			line_counter(char *av);
 int			border_check(char **map, int lines);
@@ -96,7 +97,7 @@ void		flood(char **map, int x, int y);
 void		free_check(int fd, char **map);
 void		game_init(t_game *game);
 char		**map_generator(char *av, t_game *game);
-int	w_counter(char *line);
+int			w_counter(char *line);
 t_vector	**ghost_creator(t_game *game);
 void		ghost_init(t_game *game, t_vector *ghost);
 void		ghosts_init(t_game *game);
@@ -114,15 +115,15 @@ void		render(t_game *game);
 void		ghost_manager(t_game *game);
 void		ghost_render(t_game *game, t_vector *ghost);
 void		player_render(t_game *game);
-void		moves_counter(t_game *game, void *b);
-//char		*ft_itoa_base(int value, int base);
-//char		*ft_itoa_base(char *value,long unsigned int base);
+void		moves_counter(t_game *game);
+char		*ft_itoa(int n);
+size_t		ft_count(long int i);
+char		*ft_logic(char *s, size_t count, size_t i, int n);
 int			ft_abs(int nb);
 void		ft_death(t_game *game);
 void		ft_close(t_game *game);
 void		map_destroyer(char **map);
 void		image_destroyer(t_images *i, void *m);
 void		door_destroyer(t_images *i, void *m);
-//char		*get_next_line(int fd)
 
 #endif

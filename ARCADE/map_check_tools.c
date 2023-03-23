@@ -55,9 +55,6 @@ from the exit position 'E' by checking the value of the cell at the starting pos
 
 
 */
-
-
-
 void	free_check(int fd, char **map)
 {
 	int	i;
@@ -72,7 +69,6 @@ void	free_check(int fd, char **map)
 	free(map);
 	return ;
 }
-
 /*
 The free_check function iterates over the map array and calls free on each string. It then calls free on the map array itself and closes the file.
 */

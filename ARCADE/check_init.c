@@ -23,14 +23,14 @@ void	game_init(t_game *game)
 	game->f = 0;
 }
 
-int	check_init (int ac, char** av, t_game *game)
+int	check_init(int ac, char **av, t_game *game)
 {
 	if (ac != 2)
 		return (0);
 	if (ac > 2)
 		ft_printf("\033[0;31mToo many arguments (It should be only two).\n\033[0;37m");
 	if (ac < 2)
-		ft_printf("\033[0;31mThe Map file is missing.\n\033[0;37m");	
+		ft_printf("\033[0;31mThe Map file is missing.\n\033[0;37m");
 	if (maps_check(av[1]) != 0)
 	{
 		ft_printf("\033[0;31mMammamia! Waju' eddaje insert a valid map!\n\033[0;37m");
