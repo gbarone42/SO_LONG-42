@@ -93,7 +93,6 @@ int	border_check(char **map, int lines) //the map is a 2D array
 	return (i);
 }
 
-
 int	maps_check(char *av)//file
 {
 	int		fd;

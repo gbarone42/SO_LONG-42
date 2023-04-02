@@ -8,6 +8,7 @@ SRCS = ARCADE/main.c \
 		ARCADE/char_tool.c \
 		ARCADE/map_generator.c \
 		ARCADE/ghost_creator.c \
+		ARCADE/ghost_creator2.c \
 		ARCADE/image_creator.c \
 		ARCADE/player_init.c \
 		ARCADE/input_manager.c \
