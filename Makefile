@@ -21,24 +21,36 @@ OBJS = $(SRCS:.c=.o)
 
 LIBS = ARCADE/libftprintf.a \
 		ARCADE/GNL.a \
-		ARCADE/libmlx.a \
-		ARCADE/libmlx_Linux.a \
 
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-MFLAGS = -lX11 -lXext -lm
+MFLAGS = -lmlx -framework OpenGL -framework AppKit
 
+CORSIVO='\033[3m'
+GREEN='\033[32m'
+GRAY='\033[2;37m'
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(MFLAGS) -o $(NAME) -g
 
+play:	all
+	@echo $(CORSIVO)"     - Playing all maps... \n"$(GRAY)
+	@make -C ./ clean
+	@./$(NAME) map1.ber
+	@./$(NAME) map1a.ber
+	@./$(NAME) map2.ber
+	@./$(NAME) map3.ber
+	@./$(NAME) maperror.ber
+	@./$(NAME) maonopath.ber
+	
 clean:
 		$(RM) $(OBJS)
 
 fclean: clean
+	@echo $(GREEN)"     - Removing object files..."
 			$(RM) $(NAME)
 
 re: fclean $(NAME)
