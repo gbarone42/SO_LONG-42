@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_init.c                                      :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbarone <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:20:13 by gbarone           #+#    #+#             */
-/*   Updated: 2023/03/08 17:20:17 by gbarone          ###   ########.fr       */
+/*   Created: 2022/10/05 16:19:33 by gbarone           #+#    #+#             */
+/*   Updated: 2022/10/05 16:24:24 by gbarone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "so_long.h"
-
-void	player_init(t_game *game)
+int	ft_isalnum(int c)
 {
-	int	y;
-	int	x;
-
-	y = 0;
-	while (game->map[y])
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			if (game->map[y][x] == 'P')
-			{
-				game->map[y][x] = '0';
-				game->pp->x = x;
-				game->pp->y = y;
-				return ;
-			}
-			x++;
-		}
-		y++;
-	}
-	return ;
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }
+
+/*int	main ( )
+{  
+        int a ;
+        char b ;
+        a = 1 ;
+        b = 'p' ;
+        printf ( " %d \n %d " , a , ft_isalnum(b)) ;
+}*/
